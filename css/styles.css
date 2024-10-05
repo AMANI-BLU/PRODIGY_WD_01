@@ -48,6 +48,29 @@ header{
     padding: 20px 100px;
     transition: 0.5s;
 }
+
+/* Navbar Background Color on Scroll */
+header.header-scrolled {
+    background-color: #fff; /* Change to deep purple when scrolled */
+}
+
+header.header-scrolled .navbar a {
+    color: var(--text-color); /* Change to your desired text color */
+}
+
+header.header-scrolled .navbar a:hover{
+    color: #ffbb00; /* Change to your desired text color */
+}
+header.header-scrolled .logo{
+    color: #ffbb00; /* Change to your desired text color */
+}
+
+header.header-scrolled #menu-icon{
+    color: #01151d; /* Change to your desired text color */
+}
+
+
+
 .logo{
     font-size: 1rem;
     font-weight: 600;
@@ -66,30 +89,48 @@ header{
     font-size: 1rem;
     font-weight: 500;
     color: var(--bf-color);
+    transition: 0.5s;
 }
 
-.navbar a::after{
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: var(--bf-color);
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    transition: 0.4s;
+.navbar a:hover{
+    color: #ffbb00;
 }
-
-.navbar a:hover::after, 
-.navbar .home-active::after{
-   width: 100%;
-}
-
 #menu-icon{
     font-size: 24px;
     cursor: pointer;
-    z-index: 100001;
     display: none;
+    color: #fff;
 }
+
+/* Navbar Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* Hide the navbar by default */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Position absolute to overlay */
+        background-color:#fff; /* Background for the dropdown */
+        top: 60px; /* Position below header */
+        right: 0;
+        width: 100%; /* Full width */
+        z-index: 1000;
+    }
+
+    .navbar.active {
+        display: flex; /* Show navbar when active */
+    }
+
+    #menu-icon {
+        display: block; /* Show menu icon */
+    }
+
+    .navbar li {
+        margin: 10px 0; /* Vertical spacing for links */
+    }
+    .navbar a{
+        color: #01151d;
+    }
+}
+
 .container{
     width: 100%;
     min-height: 640px;
@@ -141,7 +182,7 @@ header{
 
 .btn{
     padding: 0.6rem 2rem;
-    background: #daba07;
+    background: #ffbb00;
     color: var(---color);
     font-weight: 500;
     border-radius: 2px;
@@ -288,6 +329,7 @@ header{
 
 
 /* Gallery Section */
+
 .gallery {
     padding: 50px 100px;
     background-color: var(--bf-color);
