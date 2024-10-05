@@ -52,9 +52,3 @@ window.addEventListener('scroll', () => {
         });
     });
 
-    // Event listener for footer links
-    footerLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            setActiveLink(this);
-        });
-    });
