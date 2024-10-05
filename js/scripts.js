@@ -32,3 +32,29 @@ window.addEventListener('scroll', () => {
         header.classList.remove('header-scrolled'); // Remove class when back at top
     }
 });
+
+
+ // Get all navigation links
+    const navLinks = document.querySelectorAll('.navbar a');
+    const footerLinks = document.querySelectorAll('.footer-links a');
+
+    // Function to set the active link
+    function setActiveLink(link) {
+        navLinks.forEach(link => link.classList.remove('active')); // Remove active from all
+        footerLinks.forEach(link => link.classList.remove('active')); // Remove active from all
+        link.classList.add('active'); // Add active to the clicked link
+    }
+
+    // Event listener for nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            setActiveLink(this);
+        });
+    });
+
+    // Event listener for footer links
+    footerLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            setActiveLink(this);
+        });
+    });

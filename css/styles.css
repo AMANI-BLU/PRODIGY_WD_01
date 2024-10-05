@@ -61,6 +61,10 @@ header.header-scrolled .navbar a {
 header.header-scrolled .navbar a:hover{
     color: #ffbb00; /* Change to your desired text color */
 }
+
+header.header-scrolled .navbar a.active{
+    color: #ffbb00; /* Change to your desired text color */
+}
 header.header-scrolled .logo{
     color: #ffbb00; /* Change to your desired text color */
 }
@@ -100,6 +104,13 @@ header.header-scrolled #menu-icon{
     cursor: pointer;
     display: none;
     color: #fff;
+}
+
+
+.navbar a.active {
+    color: #ffbb00; /* Active link color */
+    font-weight: 700; /* Bold font for active link */
+    position: relative; /* Position relative for pseudo-element */
 }
 
 /* Navbar Responsive Styles */
